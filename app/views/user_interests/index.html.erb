@@ -1,0 +1,17 @@
+
+<div class="container">
+  <br />
+  <h3><strong> Your Interests are: </h3>
+    <div class="container">
+
+              <% @user_interests.each do |user_interest| %>
+                <div class="card" style="width: 15rem"  style="border-radius: 25px">
+                  <div class="card-body ">
+                    <h4><strong><%=user_interest.interest.name%></h4>
+                    <p><%=user_interest.description%></p>
+                    <p><em><%= link_to " update ", edit_user_interest_path(user_interest.id) %></em> </p>
+                  </div>
+                </div>
+              <% end %>
+    </div>
+</div>
