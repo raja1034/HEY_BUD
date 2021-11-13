@@ -15,9 +15,13 @@ pipi = User.create!(first_name: 'Pipi', last_name: 'Langstrumpf', city: 'unkown'
 luke.save;
 puts " DOne all User are created "
 
-cooking = Interest.create!(name: 'Cooking');
-trees = Interest.create!(name: 'Trees');
-biking  = Interest.create!(name: 'Biking');
+cooking = Interest.create!(name: 'Cooking')
+trees = Interest.create!(name: 'Trees')
+biking  = Interest.create!(name: 'Biking')
+
+poetry = Interest.create!(name: 'Poetry')
+flower = Interest.create!(name: 'Flowers')
+book  = Interest.create!(name: 'Books')
 
 puts " interessest done"
 p luke
