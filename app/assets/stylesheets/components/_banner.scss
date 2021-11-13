@@ -1,0 +1,51 @@
+.banner{
+  background: #2A0944;
+  height: 500px;
+  color: white;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  place-items: center;
+}
+
+.banner-image{
+  height: 350px;
+}
+
+.banner-right{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.banner-round-image{
+  height: 110px;
+  margin: 20px;
+}
+
+.banner-round-image-small{
+  height: 80px;
+  margin-right: 15px;
+}
+
+.purple-dot{
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: #3B185F;
+  align-self: flex-end;
+}
+
+.dot-container{
+  display: flex;
+  justify-content: space-evenly;
+  margin-left: 60px;
+  margin-top: 20px;
+}
+
+.banner-link{
+  align-self: flex-end;
+  margin-top: 40px;
+  color: #FEC260;
+  font-weight: bolder;
+  font-size: 25px;
+}
