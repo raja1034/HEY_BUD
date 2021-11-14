@@ -1,8 +1,14 @@
 class UserInterestsController < ApplicationController
+
+
   def index
     @user_interests = current_user.user_interests
+  end
 
-    #  @bookings = Booking.where(user_id: current_user)
+  def create
+    selected_interests = Interest.where(id: params["interest_ids"])
+    current_user.interests = selected_interests
+    redirect_to user_interests_path(@user_interest)
   end
 
   def edit
@@ -19,6 +25,5 @@ class UserInterestsController < ApplicationController
 
   def user_interest_params
     params.require(:user_interest).permit(:description)
-
   end
 end

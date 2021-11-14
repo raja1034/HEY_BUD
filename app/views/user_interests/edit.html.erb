@@ -1,5 +1,12 @@
-<%= form_for(@user_interest) do |f| %>
-  <%= f.label :description %>
-  <%= f.text_field :description %>
-  <%= f.submit %>
-<% end %>
+<div class="container">
+  <br />
+  <div class="card" style="width: 15rem"  style="border-radius: 25px">
+    <div class="card-body ">
+      <%= form_for(@user_interest) do |f| %>
+      <%= f.label :description %>
+      <%= f.text_field :description %>
+      <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+</div>
