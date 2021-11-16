@@ -75,6 +75,11 @@ ActiveRecord::Schema.define(version: 2021_11_06_115328) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  #create a table & model and make sure the table has the foreign key
+  create_table "avatar", force: :cascade do |t|
+  t.text "image_url"
+  end
+
   add_foreign_key "chatrooms", "matches"
   add_foreign_key "matches", "users", column: "asker_id"
   add_foreign_key "matches", "users", column: "receiver_id"
