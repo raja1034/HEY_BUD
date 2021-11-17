@@ -1,0 +1,23 @@
+<h1> You created your account successfully </h1>
+<h2> Please double check your information & pick an avatar </h2>
+
+<% Avatar.all.each do |avatar| %>
+  <img src="<%=avatar.image_url%>" width="400"
+     height="500">
+<% end %>
+
+<%= f.input :interest,
+            as: :radio_buttons,
+            collection_wrapper_tag: 'div',
+            collection_wrapper_class: 'category-wrapper',
+            item_wrapper_class: 'category-item',
+            input_html: {class: 'category-selector'},
+            collection: Snippet::INTERESTS %>
+
+
+
+<!--  Form, in the form a series of inputs radio input, 1 radio for every avatar that the user can select. When the user clicks on an image, select the corresponding radio.
+
+When Form is submitted, the id of the radio gets send to the server and connected to the user. You would submit the form to a method in the user controller. User.avatar_id = radio_input_value (e.g. "4")
+
+pick your interests -->

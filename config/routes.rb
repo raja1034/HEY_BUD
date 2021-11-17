@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'avatar/new'
   devise_for :users
   root to: 'pages#home'
   resource :avatar, only: :new, controller: :avatar

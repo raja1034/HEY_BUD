@@ -6,19 +6,17 @@
 #   movies = Movie.create([{ name: 'Star Wars' },
 #                          { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-<<<<<<< HEAD
 
 avatar_urls = ["https://images.unsplash.com/flagged/photo-1572392640988-ba48d1a74457?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=928&q=80", "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=890&q=80"]
 avatar_urls.each do |url|
-  Avatar.create(url: url)
+  Avatar.create(image_url: url)
 end
-=======
 # 1 user 3interessen 2 userintress
 User.destroy_all
 Interest.destroy_all
-luke = User.create!(first_name: 'Luke', last_name: 'Skywalker', city: 'Berlin', age: 27, username: 'Tree', avatar: 'unkown' ,email:'luke@luke.com', password: '123456');
-bud = User.create!(first_name: 'Bud', last_name: 'Spencer', city: 'Vienena', age: 71, username: 'Banana', avatar: 'unkown', email:'luk2e@luke.com', password: '123456');
-pipi = User.create!(first_name: 'Pipi', last_name: 'Langstrumpf', city: 'unkown', age: 14, username: 'Monkey_Power', avatar: 'unkown',email:'lukkke@luke.com', password: '123456');
+luke = User.create!(first_name: 'Luke', last_name: 'Skywalker', city: 'Berlin', age: 27, username: 'Tree', email:'luke@luke.com', password: '123456');
+bud = User.create!(first_name: 'Bud', last_name: 'Spencer', city: 'Vienena', age: 71, username: 'Banana', email:'luk2e@luke.com', password: '123456');
+pipi = User.create!(first_name: 'Pipi', last_name: 'Langstrumpf', city: 'unkown', age: 14, username: 'Monkey_Power', email:'lukkke@luke.com', password: '123456');
 luke.save;
 puts " DOne all User are created "
 
@@ -37,4 +35,3 @@ user_interest = UserInterest.create!(user_id: luke.id, interest_id: trees.id, de
 user_interest = UserInterest.create!(user_id: pipi.id, interest_id: biking.id, description: ' Bloody Dramas');
 
 puts "User interesset --done"
->>>>>>> master
