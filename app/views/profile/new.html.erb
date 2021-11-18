@@ -1,0 +1,25 @@
+<div class="container">
+  <%= form_with url: welcome_path, local: true  do |form| %>
+    <h1>Welcome to Hey Bud :)</h1>
+
+    <p style="margin-top: 3rem;">Select your Avatar</p>
+    <div class="d-flex">
+      <% Avatar.all.each do |avatar| %>
+        <%= image_tag avatar.image_url, style: "width: 100px; height: 100px; border-radius: 50%; margin-right: 12px;" %>
+        <%= form.radio_button "avatar_id", value: avatar.id %>
+      <% end %>
+    </div>
+
+    <p style="margin-top: 3rem;">Select your Interests</p>
+    <% Interest.all.each do |interest| %>
+      <div class="form-check">
+
+        <%= form.check_box "interest_ids[]", {checked: current_user.interests.include?(interest), class:"form-check-input"}, interest.id, nil %>
+        <label class="form-check-label" for="flexCheckChecked">
+          <%= interest.name %>
+        </label>
+      </div>
+    <% end %>
+    <button type="submit" class="btn btn-primary" style="margin-top: 3rem;">Show Me My Matches</button>
+  <% end %>
+</div>
