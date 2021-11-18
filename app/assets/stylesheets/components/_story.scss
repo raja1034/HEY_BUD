@@ -1,7 +1,25 @@
 .story{
 background: #FEC260;
-height: 900px;
+height: 700px;
 text-align: center;
 font-size: 30px;
 line-height: 30px;
+}
+
+.story h1{
+  color: #2A0944;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.story p {
+ color: #2A0944;
+ text-align:center;
+ max-width: 800px;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    width: 100px;
+    outline: black;
 }

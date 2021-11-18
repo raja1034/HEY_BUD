@@ -27,3 +27,18 @@
 .navbar-light .navbar-nav .nav-link{
   color: #FEC260;
 }
+
+.nav-item{
+  font-family: "Anton";
+  letter-spacing: 2px;
+  margin-right: 5px;
+  border-radius: 5%;
+  text-align: center;
+}
+
+.navbar{
+background-color: #A12568;
+position: sticky;
+top: 0;
+z-index: 100;
+}
