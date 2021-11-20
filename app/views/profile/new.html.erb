@@ -1,25 +1,39 @@
 <div class="container">
   <%= form_with url: welcome_path, local: true  do |form| %>
-    <h1>Welcome to Hey Bud :)</h1>
+    <h1>Welcome to Hey Bud, <%= current_user.first_name %> :)</h1>
+    <h2>Your new HeyBud identity is called <%= current_user.username %> </h2>
 
     <p style="margin-top: 3rem;">Select your Avatar</p>
     <div class="d-flex">
       <% Avatar.all.each do |avatar| %>
-        <%= image_tag avatar.image_url, style: "width: 100px; height: 100px; border-radius: 50%; margin-right: 12px;" %>
-        <%= form.radio_button "avatar_id", value: avatar.id %>
+        <div class="avatar-selector">
+          <%= image_tag avatar.image_url, style: "width: 100px; height: 100px; border-radius: 50%; margin-right: 12px;" %>
+          <%= form.radio_button "avatar_id", avatar.id, class: 'd-none' %>
+        </div>
       <% end %>
     </div>
 
-    <p style="margin-top: 3rem;">Select your Interests</p>
+<fieldset class="form-group check_boxes optional snippet_tags">
+  <legend class="col-form-label pt-0">Tags</legend>
+  <input type="hidden" name="snippet[tag_ids][]" value="">
+  <div class="tag-item">
     <% Interest.all.each do |interest| %>
-      <div class="form-check">
+      <%# <input class="form-check-input check_boxes optional tag-selector" type="checkbox" value="1" name="interest_ids[]" id="snippet_tag_ids_1"> %>
+      <div class="interest-selector-first">
+        <%= form.check_box "interest_ids[]", {checked: current_user.interests.include?(interest), class:"form-check-input check_boxes optional tag-selector"}, interest.id, nil %>
 
-        <%= form.check_box "interest_ids[]", {checked: current_user.interests.include?(interest), class:"form-check-input"}, interest.id, nil %>
-        <label class="form-check-label" for="flexCheckChecked">
-          <%= interest.name %>
+        <label class="form-check-label collection_check_boxes" for="snippet_tag_ids_1"> <%= interest.name %>
         </label>
       </div>
     <% end %>
-    <button type="submit" class="btn btn-primary" style="margin-top: 3rem;">Show Me My Matches</button>
+  </div>
+
+
+  </fieldset>
+  <button type="submit" class="btn btn-primary" style="margin-top: 3rem;">Show Me My Matches</button>
   <% end %>
+
+
+
+
 </div>
