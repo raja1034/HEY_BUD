@@ -11,14 +11,20 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <li class="nav-item active">
-          <%= link_to "Home", "#", class: "nav-link" %>
+        <li class="nav-item">
+          <%= link_to "PROFILE", "#", class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Messages", "#", class: "nav-link" %>
+          <%= link_to "INTEREST", "#", class: "nav-link" %>
         </li>
-        <li class="nav-item dropdown">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <li class="nav-item">
+          <%= link_to "MATCHES", "#", class: "nav-link" %>
+        </li>
+          <li class="nav-item">
+          <%= link_to "CHAT", "#", class: "nav-link" %>
+        </li>
+        <li class="dropdown">
+          <%= image_tag "", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Action", "#", class: "dropdown-item" %>
             <%= link_to "Another action", "#", class: "dropdown-item" %>
@@ -27,7 +33,7 @@
         </li>
       <% else %>
         <li class="nav-item">
-          <%= link_to "LOGIN", new_user_session_path, class: "nav-link nav-link-header" %>
+          <%= link_to "LOG IN", new_user_session_path, class: "nav-link nav-link-header" %>
         </li>
       <% end %>
     </ul>

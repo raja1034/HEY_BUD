@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_many :interests, through: :user_interests
   has_many :matches_as_asker, class_name: "Match", foreign_key: :asker_id, dependent: :destroy
   has_many :matches_as_receiver, class_name: "Match", foreign_key: :receiver_id, dependent: :destroy
+  belongs_to :avatar, optional: true
 end

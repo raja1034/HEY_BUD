@@ -10,10 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_06_115328) do
+ActiveRecord::Schema.define(version: 2021_11_18_190950) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "avatars", force: :cascade do |t|
+    t.string "image_url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "chatrooms", force: :cascade do |t|
     t.bigint "match_id", null: false
@@ -71,6 +77,8 @@ ActiveRecord::Schema.define(version: 2021_11_06_115328) do
     t.integer "age"
     t.string "username"
     t.string "avatar"
+    t.bigint "avatar_id"
+    t.index ["avatar_id"], name: "index_users_on_avatar_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -82,4 +90,5 @@ ActiveRecord::Schema.define(version: 2021_11_06_115328) do
   add_foreign_key "messages", "users"
   add_foreign_key "user_interests", "interests"
   add_foreign_key "user_interests", "users"
+  add_foreign_key "users", "avatars"
 end

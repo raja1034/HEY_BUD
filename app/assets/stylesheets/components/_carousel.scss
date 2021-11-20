@@ -1,6 +1,23 @@
-.carousel-image{
+.carousel-image {
  height: 400px;
+ width: 600px;
  border-radius: 15%;
  display: block;
  text-align: center;
+}
+
+.carousel-background {
+  background-color: #FFE5BB;
+  width: 600px;
+  height: 400px;
+  margin-top: 15px;
+  margin-right: 50px;
+  border-radius: 15%;
+}
+
+.carousel-item h1{
+  color: #A12568;
+  text-align: center;
+  margin-top: 15px;
+  padding-top: 15px;
 }
