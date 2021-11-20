@@ -13,16 +13,27 @@
       <% end %>
     </div>
 
-    <p style="margin-top: 3rem;">Select your Interests</p>
+<fieldset class="form-group check_boxes optional snippet_tags">
+  <legend class="col-form-label pt-0">Tags</legend>
+  <input type="hidden" name="snippet[tag_ids][]" value="">
+  <div class="tag-item">
     <% Interest.all.each do |interest| %>
-      <div class="form-check">
+      <%# <input class="form-check-input check_boxes optional tag-selector" type="checkbox" value="1" name="interest_ids[]" id="snippet_tag_ids_1"> %>
+      <div class="interest-selector-first">
+        <%= form.check_box "interest_ids[]", {checked: current_user.interests.include?(interest), class:"form-check-input check_boxes optional tag-selector"}, interest.id, nil %>
 
-        <%= form.check_box "interest_ids[]", {checked: current_user.interests.include?(interest), class:"form-check-input"}, interest.id, nil %>
-        <label class="form-check-label" for="flexCheckChecked">
-          <%= interest.name %>
+        <label class="form-check-label collection_check_boxes" for="snippet_tag_ids_1"> <%= interest.name %>
         </label>
       </div>
     <% end %>
-    <button type="submit" class="btn btn-primary" style="margin-top: 3rem;">Show Me My Matches</button>
+  </div>
+
+
+  </fieldset>
+  <button type="submit" class="btn btn-primary" style="margin-top: 3rem;">Show Me My Matches</button>
   <% end %>
+
+
+
+
 </div>
