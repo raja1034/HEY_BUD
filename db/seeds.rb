@@ -70,4 +70,20 @@ user_interest = UserInterest.create!(user_id: leo.id, interest_id: sports.id, de
 user_interest = UserInterest.create!(user_id: leo.id, interest_id: music.id, description: ' Anything with Guitar is my jam!');
 user_interest = UserInterest.create!(user_id: leo.id, interest_id: traveling.id, description: 'Cannot wait to travel again');
 
+user_interest = UserInterest.create!(user_id: toni.id, interest_id: dancing.id, description: 'Look basketball and Yoga!');
+user_interest = UserInterest.create!(user_id: toni.id, interest_id: music.id, description: ' Anything with Guitar is my jam!');
+user_interest = UserInterest.create!(user_id: toni.id, interest_id: traveling.id, description: 'Cannot wait to travel again');
+
+user_interest = UserInterest.create!(user_id: dennis.id, interest_id: eating_out.id, description: 'Look basketball and Yoga!');
+user_interest = UserInterest.create!(user_id: dennis.id, interest_id: reading.id, description: ' Anything with Guitar is my jam!');
+user_interest = UserInterest.create!(user_id: dennis.id, interest_id: board_games.id, description: 'Cannot wait to travel again');
+
+user_interest = UserInterest.create!(user_id: martin.id, interest_id: sports.id, description: 'Look basketball and Yoga!');
+user_interest = UserInterest.create!(user_id: martin.id, interest_id: music.id, description: ' Anything with Guitar is my jam!');
+user_interest = UserInterest.create!(user_id: martin.id, interest_id: politics.id, description: 'Cannot wait to travel again');
+
+user_interest = UserInterest.create!(user_id: bernadette.id, interest_id: sports.id, description: 'Cooking Vegan Bread!');
+user_interest = UserInterest.create!(user_id: bernadette.id, interest_id: music.id, description: ' Anything with Violin is my jam!');
+user_interest = UserInterest.create!(user_id: bernadette.id, interest_id: cooking.id, description: 'I love to oil paint');
+
 puts "User interests --done"
