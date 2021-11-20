@@ -1,5 +1,5 @@
 
-<div class="description-background">
+<div class="description-background min-height">
 <div class="container">
   <br />
   <h3><em> Your Interests are:</em> </h3>
@@ -45,11 +45,15 @@
         <% @user_interests.each do |user_interest| %>
             <div class="rcorners1">
               <h4><strong><%=user_interest.interest.name%></h4>
-              <p><%=user_interest.description%></p>
+              <p class="scroll"><%=user_interest.description%></p>
               <p><em><%= link_to " update ", edit_user_interest_path(user_interest.id) %></em> </p>
             </div>
             <br />
         <% end %>
 
     </div>
+    <%# <div class="container bottom">
+
+    </div> %>
+
 </div>

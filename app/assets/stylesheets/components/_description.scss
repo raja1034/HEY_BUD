@@ -1,5 +1,7 @@
 .description-background {
   background: #FFE5BB;
+
+
 }
 
 .description {
@@ -27,4 +29,23 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.min-height{
+    min-height: 100vh;
+}
+.scroll{
+overflow: auto;
+max-height: 50px;
+margin-bottom: 0;
+}
+.scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.scroll::-webkit-scrollbar-track {
+    display: none;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+    display: none;
 }
