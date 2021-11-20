@@ -44,9 +44,9 @@
 
         <% @user_interests.each do |user_interest| %>
             <div class="rcorners1">
-              <h4><strong><%=user_interest.interest.name%></h4>
-              <p class="scroll"><%=user_interest.description%></p>
-              <p><em><%= link_to " update ", edit_user_interest_path(user_interest.id) %></em> </p>
+              <h4><%=user_interest.interest.name%></h4>
+              <p class="scroll font"><%=user_interest.description%></p>
+              <%= link_to " UPDATE ", edit_user_interest_path(user_interest.id), class: "button" %>
             </div>
             <br />
         <% end %>

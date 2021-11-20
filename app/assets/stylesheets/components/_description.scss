@@ -34,7 +34,7 @@
     min-height: 100vh;
 }
 .scroll{
-overflow: auto;
+overflow: scroll;
 max-height: 50px;
 margin-bottom: 0;
 }
@@ -49,3 +49,24 @@ margin-bottom: 0;
 .scroll::-webkit-scrollbar-thumb {
     display: none;
 }
+.button {
+  background-color: #fec260;
+  border-radius: 4px;
+  padding: 2px 4px;
+  border: none;
+  color: #a12568;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-weight: 900;
+}
+.button:hover {
+  color: #a12568;
+  text-decoration: none;
+  opacity: 0.7;
+}
+
+.button1 {padding: 10px 24px;}
