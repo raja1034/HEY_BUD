@@ -1,13 +1,12 @@
 
+<div class="description-background min-height">
 <div class="container">
   <br />
-  <h3><strong> Your Interests are: </h3>
+  <h3><em> Your Interests are:</em> </h3>
     <div class="container">
 
       <!-- Button trigger modal -->
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-        Edit your Interests
-      </button>
+      <p><button class="myButton" data-toggle="modal" data-target="#exampleModal"> Edit your Interests </button></p>
 
       <!-- Modal -->
       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -43,14 +42,18 @@
       </div>
 
 
-      <% @user_interests.each do |user_interest| %>
-        <div class="card" style="width: 15rem"  style="border-radius: 25px">
-          <div class="card-body ">
-            <h4><strong><%=user_interest.interest.name%></h4>
-            <p><%=user_interest.description%></p>
-            <p><em><%= link_to " update ", edit_user_interest_path(user_interest.id) %></em> </p>
-          </div>
-        </div>
-      <% end %>
+        <% @user_interests.each do |user_interest| %>
+            <div class="rcorners1">
+              <h4><strong><%=user_interest.interest.name%></h4>
+              <p class="scroll"><%=user_interest.description%></p>
+              <p><em><%= link_to " update ", edit_user_interest_path(user_interest.id) %></em> </p>
+            </div>
+            <br />
+        <% end %>
+
     </div>
+    <%# <div class="container bottom">
+
+    </div> %>
+
 </div>
