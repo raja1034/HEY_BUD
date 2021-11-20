@@ -6,17 +6,45 @@
      height="500">
 <% end %>
 
-<%= f.input :interest,
-            as: :radio_buttons,
-            collection_wrapper_tag: 'div',
-            collection_wrapper_class: 'category-wrapper',
-            item_wrapper_class: 'category-item',
-            input_html: {class: 'category-selector'},
-            collection: Snippet::INTERESTS %>
+
+<%= form_with url: user_interests_path, local: true  do |form| %>
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"> Select your Interests </h5>
+                <button class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
 
 
 
-<!--  Form, in the form a series of inputs radio input, 1 radio for every avatar that the user can select. When the user clicks on an image, select the corresponding radio.
+                  <% Interest.all.each do |interest| %>
+                    <div class="form-check category-wrapper">
+                      <div class="category-item">
+                      <%= form.check_box "interest_ids[]", {checked: current_user.interests.include?(interest), class:"form-check-input category-selector"}, interest.id, nil %>
+                      <label class="form-check-label" for="flexCheckChecked">
+                        <%= interest.name %>
+                      </label>
+                    </div>
+                  <% end %>
+
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Save changes</button>
+              </div>
+            <% end %>
+
+
+
+
+<!--
+
+
+
+
+ Form, in the form a series of inputs radio input, 1 radio for every avatar that the user can select. When the user clicks on an image, select the corresponding radio.
 
 When Form is submitted, the id of the radio gets send to the server and connected to the user. You would submit the form to a method in the user controller. User.avatar_id = radio_input_value (e.g. "4")
 
