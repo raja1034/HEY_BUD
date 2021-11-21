@@ -26,8 +26,17 @@
 }
 
 .heyBudButton {
-  background-color:#6c7c7c;
-  font-family:Arial;
-	font-size:15px;
-	font-weight:bold;
+  background-color:#A12568;
+  font-family: "Anton";
+  color: #FEC260;
+	font-size:20px;
+	font-weight: 400;
+  border-radius: 5px;
+  border: none;
+  text-align: center;
+}
+
+.heyBudButton:hover {
+  background-color:#FEC260;
+  color: #A12568;
 }
