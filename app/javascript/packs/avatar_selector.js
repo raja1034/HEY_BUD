@@ -6,7 +6,7 @@ const avatarSelector = () => {
       const radio = avatar.querySelector('input');
       radio.checked = true;
       const image = avatar.querySelector('img');
-      image.classList.add('border', 'border-primary');
+      image.classList.add('border', 'border-avatar');
       // add our own stylesheet for border-primary-avatar
     })
   })
