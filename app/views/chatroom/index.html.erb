@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-3">
+    <p> Hello <%= current_user.first_name %> </p>
+      <%= render 'form', room: Room.new %>
+    <hr>
+    <% @chatrooms.each do |chatroom| %>
+      <%= link_to chatroom do %>
+        <div class="card mb-2">
+          <div class="card-body">
+            <%= chatroom.name %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+    </div>
+    <div class="col-9">
+      <% if @room.present? %>
+        <div class="chat-room">
+          <p> <%= @room.name %> </p>
+          <% @room.messages.each do |message| %>
+          <div class="message mb-2  <%= 'me' if message.user == current_user %>">
+            <div class="content" >
+              <%= message.content %>
+            </div>
+            <div class="author">
+            <%= message.user.username %>
+            </div>
+          </div>
+          <br>
+          <% end %>
+          <div class="chat-box">
+            <%= render 'messages/form', message:Message.new, room: @room %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+  </div>
+</div>

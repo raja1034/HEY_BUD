@@ -26,7 +26,7 @@ avatar_urls.each do |avatar_url|
   Avatar.create(image_url: avatar_url)
 end
 
-puts "avatars  have been created"
+puts "avatars have been created"
 
 raja = User.create!(first_name: 'Raja', last_name: 'Nair', city: 'Berlin', age: 27, username: 'Hair Destroyer', avatar: Avatar.all.sample ,email:'rn@lewagon.com', password: '123456');
 philipp = User.create!(first_name: 'Philipp', last_name: 'Berendes', city: 'Berlin', age: 50, username: 'SQL Ruler', avatar: Avatar.all.sample, email:'pb@lewagon.com', password: '123456');
@@ -46,18 +46,18 @@ leo = User.create!(first_name: 'Leo', last_name: 'Körber', city: 'Berlin', age:
 
 puts "All User are created "
 
-music = Interest.create!(name: 'Music');
-video_games = Interest.create!(name: 'Gaming');
-sports = Interest.create!(name: 'Sports');
-traveling = Interest.create!(name: 'Traveling');
-board_games = Interest.create!(name: 'Board Games');
-eating_out  = Interest.create!(name: 'Eating Out');
-dancing = Interest.create!(name: 'Dancing');
-painting = Interest.create!(name: 'Painting');
-cooking  = Interest.create!(name: 'Cooking');
-movies = Interest.create!(name: 'Movies');
-reading = Interest.create!(name: 'Reading');
-politics = Interest.create!(name: 'Politics');
+music = Interest.create!(name: '🎶 Music');
+video_games = Interest.create!(name: '🎮 Video Games');
+sports = Interest.create!(name: '⚽️ Sports');
+traveling = Interest.create!(name: '🏖 Traveling');
+board_games = Interest.create!(name: '🎲 Board Games');
+eating_out  = Interest.create!(name: '🍔 Having Dinner');
+dancing = Interest.create!(name: '💃 Dancing');
+painting = Interest.create!(name: '🎨 Painting');
+cooking  = Interest.create!(name: '👩‍🍳 Cooking');
+movies = Interest.create!(name: '🍿 Movies');
+reading = Interest.create!(name: '📖 Reading');
+politics = Interest.create!(name: '🎙 Politics');
 
 
 puts "interests created"

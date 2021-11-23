@@ -1,12 +1,15 @@
-<div class="container">
-  <br />
-  <div class="card" style="width: 15rem"  style="border-radius: 25px">
-    <div class="card-body ">
-      <%= form_for(@user_interest) do |f| %>
-      <%= f.label :description %>
-      <%= f.text_field :description %>
-      <%= f.submit %>
-      <% end %>
+
+<div class="description-background min-height">
+  <div class="container description-background">
+    <br />
+    <div class="card description-background center" style="width: 450px">
+      <div class="card-body ">
+        <%= simple_form_for(@user_interest) do |f| %>
+        <%=  f.input :description,:input_html => { maxlength: 100, :cols => 3, :rows => 5 } %>
+        <%= f.submit %>
+        <% end %>
+      </div>
     </div>
+    <br />
   </div>
 </div>
