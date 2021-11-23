@@ -5,7 +5,7 @@
     <h1>Welcome to Hey Bud, <%= current_user.first_name %> :)</h1>
     <h2>Your new HeyBud identity is called <%= current_user.username %> </h2>
 
-    <div class="sign-up-div">
+    <div class="sign-up-div" id="avatar_pick">
       <h4> Pick your avatar </h4>
       <%# <p style="margin-top: 3rem;">Select your Avatar</p> %>
       <div class="d-flex">
@@ -16,28 +16,34 @@
           </div>
         <% end %>
       </div>
+
+        <span class="heyBudButton" id="interest_button" style="margin-top: 3rem;"> Pick your interests </span>
+
     </div>
 
 <%# <fieldset class="form-group check_boxes optional snippet_tags"> %>
   <%# <legend class="col-form-label pt-0"> Tags </legend> %>
-  <h4> Pick your interests </h4>
-  <input type="hidden" name="snippet[tag_ids][]" value="">
-  <div class="tag-item">
-  <div class="d-flex flex-wrap">
-    <% Interest.all.each do |interest| %>
-      <%# <input class="form-check-input check_boxes optional tag-selector" type="checkbox" value="1" name="interest_ids[]" id="snippet_tag_ids_1"> %>
-      <div class="interest-selector-first">
-        <%= form.check_box "interest_ids[]", {checked: current_user.interests.include?(interest), class:"form-check-input check_boxes optional tag-selector"}, interest.id, nil %>
+  <div class="hidden-welcome" id="interest_pick">
+    <h4> Pick your interests </h4>
+    <input type="hidden" name="snippet[tag_ids][]" value="">
+      <div class="tag-item">
+        <div class="d-flex flex-wrap">
+          <% Interest.all.each do |interest| %>
+            <%# <input class="form-check-input check_boxes optional tag-selector" type="checkbox" value="1" name="interest_ids[]" id="snippet_tag_ids_1"> %>
+            <div class="interest-selector-first">
+              <%= form.check_box "interest_ids[]", {checked: current_user.interests.include?(interest), class:"form-check-input check_boxes optional tag-selector"}, interest.id, nil %>
 
-        <label class="form-check-label collection_check_boxes" for="snippet_tag_ids_1"> <%= interest.name %>
-        </label>
+              <label class="form-check-label collection_check_boxes" for="snippet_tag_ids_1"> <%= interest.name %>
+              </label>
+            </div>
+          <% end %>
+        </div>
       </div>
-    <% end %>
-  </div>
-  </div>
+
+      <button type="submit" class="heyBudButton" style="margin-top: 3rem;"> Show Me My Matches </button>
+
+    </div>
   <%# </fieldset> %>
-  <button type="submit" class="heyBudButton" style="margin-top: 3rem;"> Show Me My Matches </button>
-  <button type="submit" class="heyBudButton" style="margin-top: 3rem;"> Pick your interests </button>
   <% end %>
 
 </div>
