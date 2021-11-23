@@ -47,7 +47,7 @@ leo = User.create!(first_name: 'Leo', last_name: 'Körber', city: 'Berlin', age:
 puts "All User are created "
 
 music = Interest.create!(name: 'Music');
-video_games = Interest.create!(name: 'Video Games');
+video_games = Interest.create!(name: 'Gaming');
 sports = Interest.create!(name: 'Sports');
 traveling = Interest.create!(name: 'Traveling');
 board_games = Interest.create!(name: 'Board Games');

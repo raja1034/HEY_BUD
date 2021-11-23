@@ -1,8 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Abel');
-
-html, body {
-  background: #FCEEB5;
-  font-family: Abel, Arial, Verdana, sans-serif;
+body, html {
+  background: #2A0944;
 }
 
 .center {
@@ -15,13 +12,13 @@ html, body {
 .card {
   width: 450px;
   height: 250px;
-  background-color: #fff;
+  background-color: rgb(126, 15, 15);
   background: linear-gradient(#f8f8f8, #fff);
   box-shadow: 0 8px 16px -8px rgba(0,0,0,0.4);
-  border-radius: 6px;
   overflow: hidden;
   position: relative;
   margin: 1.5rem;
+  border-radius: 60px;
 }
 
 .card h1 {
@@ -32,14 +29,10 @@ html, body {
   position: absolute;
   width: 150px;
   height: 100%;
-  background: linear-gradient(#dE685E, #EE786E);
+  background: linear-gradient(purple, #EE786E);
   transition: width 0.4s;
   overflow: hidden;
   z-index: 2;
-}
-
-.card.green .additional {
-  background: linear-gradient(#92bCa6, #A2CCB6);
 }
 
 
@@ -145,7 +138,7 @@ html, body {
 }
 
 .card .additional .stats div.title {
-  font-size: 0.75rem;
+  font-size: 15px;
   font-weight: bold;
   text-transform: uppercase;
 }
@@ -182,4 +175,17 @@ html, body {
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
+}
+
+.general h1 {
+font-family: Anton;
+text-align: center;
+color: #FEC260;
+}
+
+.container h1 {
+font-family: Anton;
+text-align: center;
+color: #FEC260;
+padding-top: 10px;
 }
