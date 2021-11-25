@@ -7,6 +7,12 @@ class MatchesController < ApplicationController
     # Calling .interest on the matches(on the user_instances)
   end
 
+  def create
+    @match = Match.create(match_params)
+    @chatroom = Chatroom.create(match_id: @match.id)
+    redirect_to chatroom_path(@chatroom)
+  end
+
   private
 
   def find_interest_ids_of_current_user
@@ -35,17 +41,6 @@ class MatchesController < ApplicationController
   def sort_ranked_users
     rank_potential_matches.sort_by { |_key, value| value }.reverse.to_h
   end
-
-  def new
-    @match = Match.new
-  end
-
-  def create
-    @match = Match.new(match_params)
-    @chatroom = Chatroom.create(match_id: @match.id)
-  end
-
-  private
 
   def match_params
     params.require(:match).permit(:asker_id, :receiver_id)
