@@ -88,4 +88,4 @@ user_interest = UserInterest.create!(user_id: bernadette.id, interest_id: cookin
 
 puts "User interests --done"
 
-match_new = Match.create!(asker_id: raja.id, receiver_id: leo.id)
+# match_new = Match.create!(asker_id: raja.id, receiver_id: leo.id)
