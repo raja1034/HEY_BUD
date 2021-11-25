@@ -1,8 +1,10 @@
-body, html {
+.container-main {
   background: #2A0944;
+  padding-bottom: 40px;
 }
 
-.center {
+
+.center-connect {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -177,15 +179,17 @@ body, html {
   grid-template-columns: 1fr 1fr;
 }
 
-.general h1 {
+.container-main h1 {
 font-family: Anton;
 text-align: center;
 color: #FEC260;
+padding-top: 20px;
 }
 
-.container h1 {
+.container-main h2 {
 font-family: Anton;
 text-align: center;
-color: #FEC260;
-padding-top: 10px;
+color: #2A0944;
+padding-top: 50px;
+line-height: 50px;
 }
