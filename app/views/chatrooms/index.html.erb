@@ -9,7 +9,7 @@
       <%= link_to chatroom do %>
         <div class="card mb-2">
           <div class="card-body">
-            <%= chatroom.matches.asker_id %>
+            <%= chatroom.match.asker_id %>
           </div>
         </div>
       <% end %>
@@ -30,9 +30,12 @@
           </div>
           <br>
           <% end %>
-          <div class="chat-box">
-            <%= render 'messages/form', message:Message.new, room: @room %>
-          </div>
+          <%# <div class="chat-box">
+            <%= render 'messages/form', message:Message.new, room: @room
+          </div> %>
+          <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
+            <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}" %>
+          <% end %>
         </div>
       <% end %>
     </div>
