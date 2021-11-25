@@ -4,23 +4,22 @@
   <div class="row">
     <div class="col-3">
     <p> Hello <%= current_user.first_name %> </p>
-      <%= render 'form', room: Room.new %>
     <hr>
     <% @chatrooms.each do |chatroom| %>
       <%= link_to chatroom do %>
         <div class="card mb-2">
           <div class="card-body">
-            <%= chatroom.name %>
+            <%= chatroom.matches.asker_id %>
           </div>
         </div>
       <% end %>
     <% end %>
     </div>
     <div class="col-9">
-      <% if @room.present? %>
+      <% if @chatroom.present? %>
         <div class="chat-room">
-          <p> <%= @room.name %> </p>
-          <% @room.messages.each do |message| %>
+          <p> <%= @chatroom.name %> </p>
+          <% @chatroom.messages.each do |message| %>
           <div class="message mb-2  <%= 'me' if message.user == current_user %>">
             <div class="content" >
               <%= message.content %>
