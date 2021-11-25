@@ -32,6 +32,23 @@ class MatchesController < ApplicationController
   def sort_ranked_users
     rank_potential_matches.sort_by { |_key, value| value }.reverse.to_h
   end
+
+  def new
+    @match = Match.new
+  end
+
+  def create
+    @match = Match.new(match_params)
+    @chatroom = Chatroom.create(match_id: @match.id)
+  end
+
+  private
+
+  def match_params
+    params.require(:match).permit(:asker_id, :receiver_id)
+  end
+
+
 end
 
 

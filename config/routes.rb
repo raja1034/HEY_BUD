@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :user_interests, only: %i[index create edit update]
   get "/welcome", to: "profile#new", as: :user_root
   post "/welcome", to: "profile#create"
-  resources :chatrooms, only: %i[index show]
+  resources :chatrooms, only: %i[index show] do
+  resources :messages, only: :create
+  end
 
 end
