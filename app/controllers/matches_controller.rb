@@ -2,6 +2,9 @@ class MatchesController < ApplicationController
   def index
     @matches = Match.all
     @potential_matches = sort_ranked_users
+    # limit the number of matches to 10 results
+    # Find out how to iterate over the keys in a hash
+    # Calling .interest on the matches(on the user_instances)
   end
 
   private
