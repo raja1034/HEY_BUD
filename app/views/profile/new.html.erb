@@ -1,63 +1,41 @@
-<div class="container sign-up-div">
-
-  <%= form_with url: welcome_path, local: true  do |form| %>
-
-    <h1>Welcome to Hey Bud, <%= current_user.first_name %> :)</h1>
-    <h2>Your new HeyBud identity is called <%= current_user.username %> </h2>
-
-    <div class="sign-up-div" id="avatar_pick">
-      <h4> Pick your avatar </h4>
-      <%# <p style="margin-top: 3rem;">Select your Avatar</p> %>
-      <div class="d-flex">
-        <% Avatar.all.each do |avatar| %>
-          <div class="avatar-selector">
-            <%= image_tag avatar.image_url, style: "width: 100px; height: 100px; border-radius: 50%; margin-right: 12px;" %>
-            <%= form.radio_button "avatar_id", avatar.id, class: 'd-none' %>
-          </div>
-        <% end %>
-      </div>
-
-        <span class="heyBudButton" id="interest_button" style="margin-top: 3rem; padding: 5px 10px"> Pick your interests </span>
-
-        <h6> You are 1/3 done with your sign-up! </h6>
-        <div class="progress">
-          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 33%; background-color: #A12568;"></div>
-        </div>
-
-    </div>
-
-<%# <fieldset class="form-group check_boxes optional snippet_tags"> %>
-  <%# <legend class="col-form-label pt-0"> Tags </legend> %>
-  <div class="hidden-welcome" id="interest_pick">
-    <h4> Pick your interests </h4>
-    <input type="hidden" name="snippet[tag_ids][]" value="">
-      <div class="tag-item">
-        <div class="d-flex flex-wrap">
-          <% Interest.all.each do |interest| %>
-            <%# <input class="form-check-input check_boxes optional tag-selector" type="checkbox" value="1" name="interest_ids[]" id="snippet_tag_ids_1"> %>
-            <div class="interest-selector-first">
-              <%= form.check_box "interest_ids[]", {checked: current_user.interests.include?(interest), class:"form-check-input check_boxes optional tag-selector"}, interest.id, nil %>
-
-              <label class="form-check-label collection_check_boxes" for="snippet_tag_ids_1"> <%= interest.name %>
-              </label>
+<div class="container-signup">
+  <div class="container container-top">
+    <%= form_with url: welcome_path, local: true  do |form| %>
+      <div class="container container-card-trip" id="avatar_pick">
+        <div class="card-trip justify-content-center" >
+          <h2 class="text-uppercase">Welcome to Hey Bud, <%= current_user.first_name %> </h2>
+          <h5>Your new HeyBud identity is called <%= current_user.username %> </h5>
+          <div class="sign-up-div">
+            <h4 class="text-uppercase"> Pick your avatar </h4>
+            <div class="d-flex justify-content-center">
+              <% Avatar.all.each do |avatar| %>
+                <div class="avatar-selector">
+                  <%= image_tag avatar.image_url, style: "width: 100px; height: 100px; border-radius: 50%; margin-right: 12px;" %>
+                  <%= form.radio_button "avatar_id", avatar.id, class: 'd-none' %>
+                </div>
+              <% end %>
             </div>
-          <% end %>
+          </div>
+          <span class="heyBudButton" id="interest_button"> Pick your interests </span>
         </div>
       </div>
 
-      <h6> You are 2/3 done with your sign-up! - Pick your interests to complete the sign-up </h6>
-        <div class="progress">
-          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 66%background-color: #A12568;"></div>
+
+      <div class="container container-card-trip hidden-welcome" id="interest_pick">
+        <div class="card-trip">
+          <h4 class="text-uppercase"> <%= current_user.first_name %>, pick your top 3 interests </h4>
+          <input type="hidden" name="snippet[tag_ids][]" value="">
+          <div class="tag-item d-flex flex-wrap justify-content-center">
+            <% Interest.all.each do |interest| %>
+              <div class="interest-selector-first">
+                <%= form.check_box "interest_ids[]", {checked: current_user.interests.include?(interest), class:"form-check-input check_boxes optional tag-selector"}, interest.id, nil %>
+                <label class="form-check-label collection_check_boxes" for="snippet_tag_ids_1"> <%= interest.name %>
+                </label></div>
+            <% end %>
+          </div>
+          <button type="submit" class="heyBudButton"> Show Me My Matches </button>
         </div>
-
-      <button type="submit" class="heyBudButton" style="margin-top: 3rem;"> Show Me My Matches </button>
-
-    </div>
-  <%# </fieldset> %>
-  <% end %>
-
-</div>
-
-
-
+      </div>
+    <% end %>
+  </div>
 </div>
