@@ -37,8 +37,14 @@
   padding: 10px 20px;
 }
 
+.heyBudButton.chatbutton {
+  background-color: #A12568;
+  color: #FEC260;
+  border-radius: 0px 25px 25px 0px;
+}
+
 .heyBudButton:hover {
-  background-color:#FEC260;
-  color: #A12568;
+  background-color:#A12568;
+  color: #FEC260;
   cursor: pointer;
 }
