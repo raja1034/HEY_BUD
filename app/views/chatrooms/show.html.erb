@@ -1,10 +1,58 @@
-<h1>#<%= @chatroom.match_id %></h1>
-<div id="messages" data-chatroom-id="<%= @chatroom.id %>">
-  <% @chatroom.messages.each do |message| %>
-   <%= render "/messages/message", message: message %>
-  <% end %>
-   <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
-      <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.match_id }" %>
-      <%= f.button :submit, label: false%>
-  <% end %>
+<div class="container-fluid">
+  <div class="row">
+
+    <div class="col-3">
+      <%# <p> Hello <%= current_user.first_name </p>
+      <hr> %>
+        <% @chatrooms.each do |chatroom| %>
+          <%= link_to chatroom do %>
+            <div class="card-chatpartner mb-2">
+              <div class="card-body">
+                <h3 class="chatpartner"> <%= chatroom.match.receiver.first_name %> </h3>
+                <p class="last-message"> This is a last message </p>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+    </div>
+
+
+    <div class="col-9">
+
+      <div class="chat-column">
+
+        <h3><%= @chatroom.match.receiver.first_name %></h1>
+
+          <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
+            <% @chatroom.messages.each do |message| %>
+              <% if message.user == current_user %>
+                <div class="message d-flex justify-content-end" >
+                  <%= render "/messages/message", message: message %>
+                </div>
+                <br>
+              <% else %>
+                <div class="message d-flex justify-content-start" >
+                  <%= render "/messages/message", message: message %>
+                </div>
+                <br>
+              <% end %>
+
+            <% end %>
+          </div>
+
+          <div class="chat-box d-flex">
+              <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
+              <div class="flex-item">
+                <%= f.input :content, label: false, placeholder: "Message to #{@chatroom.match.receiver.first_name }" %>
+              </div>
+              <div class="flex-item">
+               <%= f.button :submit, "SEND", class: "heyBudButton" %>
+              </div>
+              <% end %>
+          </div>
+
+      </div>
+    </div>
+
+  </div>
 </div>

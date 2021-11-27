@@ -17,6 +17,10 @@ class MessagesController < ApplicationController
 
   end
 
+  # def username
+  #   @message
+  # end
+
   private
 
   def message_params
