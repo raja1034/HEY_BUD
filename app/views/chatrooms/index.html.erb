@@ -17,6 +17,10 @@
                   <% lastMessage = chatroom.messages.last %>
                   <%= lastMessage.content  %>
                 </p>
+                <p class="last-message-date">
+                  <%= lastMessage.user.username %> on the
+                  <%= lastMessage.created_at.strftime("%d %b at %H:%M") %>
+                </p>
               </div>
             </div>
           <% end %>
