@@ -8,16 +8,15 @@
 }
 
 .tag-selector + label {
-  cursor: pointer;
-  display: inline-block;
-  font-size: 20px;
-  border-radius: 50rem;
-  padding: 0.1rem 0.5rem;
-  background-color: #ffffff;
-  color: #FEC260;
-  border: 2px solid #A12568;
-  margin-right: 0.6rem;
-  margin-bottom: 0.4rem;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 20px;
+    border-radius: 50rem;
+    padding: 10px 20px;
+    background-color: #A12568;
+    color: #FEC260;
+    border: 3px solid #A12568;
+    margin: 5px;
 }
 
 .tag-selector:checked + label {
