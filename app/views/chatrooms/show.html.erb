@@ -29,8 +29,8 @@
           <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
             <% @chatroom.messages.each do |message| %>
               <% if message.user == current_user %>
-                <div class="message d-flex justify-content-end" >
-                  <%= render "/messages/message", message: message %>
+                <div class="message d-flex justify-content-end">
+                  <%= render "/messages/message2", message: message %>
                 </div>
                 <br>
               <% else %>
