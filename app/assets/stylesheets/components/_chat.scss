@@ -35,14 +35,20 @@
        background-color: #FFE5BB;
       padding: 8px 16px;
       border-radius: 20px;
-
 }
 
-.message-content-container {
-       background-color: #00ff22;
-      padding: 8px 16px;
-      border-radius: 20px;
+.message-container2 {
+    background-color: #A12568;
+    padding: 8px 16px;
+    border-radius: 20px;
+    color: white;
 }
+
+// .message-content-container {
+//        background-color: #00ff22;
+//       padding: 8px 16px;
+//       border-radius: 20px;
+// }
 
 // .last-message {
 //   color: #000000;
@@ -77,7 +83,7 @@
 .message-me {
 //  float: right;
   justify-content: flex-end;
-
+  background-color: #A12568;
 }
 
 
