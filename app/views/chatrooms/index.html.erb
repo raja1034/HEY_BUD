@@ -1,32 +1,28 @@
-<p id="notice"><%= notice %></p>
-
+<div class="container-main-chat">
 <div class="container-fluid">
-  <div class="row">
-    <div class="col-3">
-    <p> Hello <%= current_user.first_name %> </p>
-    <hr>
-    <% @chatrooms.each do |chatroom| %>
-      <%= link_to chatroom do %>
-        <div class="card mb-2">
-          <div class="card-body">
-            <%= chatroom.match.asker_id %>
-          </div>
-        </div>
-      <% end %>
-    <% end %>
-    </div>
 
-    <div class="col-9">
-      <% if @chatroom.present? %>
-      <h1>#<%= @chatroom.match_id %></h1>
-      <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
-        <% @chatroom.messages.each do |message| %>
-        <%= render "/messages/message", message: message %>
+  <h3 class="text-center header-chat-index"> Chat with your matches </h3>
+
+    <div class="cards">
+
+      <%# <p> Hello <%= current_user.first_name </p>
+      <hr> %>
+        <% @chatrooms.each do |chatroom| %>
+          <%= link_to chatroom do %>
+            <div class="card-chatpartner mb-2">
+              <img src="https://github.com/identicons/Victor.png" class="avatar-card-chat">
+              <div class="card-body">
+                <h3 class="chatpartner"> <%= chatroom.match.receiver.first_name %> </h3>
+                <p class="last-message">
+                  <% lastMessage = chatroom.messages.last %>
+                  <%= lastMessage.content  %>
+                </p>
+              </div>
+            </div>
+          <% end %>
         <% end %>
-        <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
-            <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.match_id }" %>
-            <%= f.button :submit, label: false%>
-        <% end %>
-      </div>
-    <% end %>
     </div>
+    <button class="heyBudButton-chat-discover center-button"> Discover more matches! </button>
+
+</div>
+</div>
