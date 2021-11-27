@@ -10,8 +10,12 @@
       <div class="user-card">
         <img src="https://github.com/identicons/Victor.png" class="avatar-card">
 
-    <div class="points center-connect">
-    connect
+        <div class="points center-connect">
+          <%= simple_form_for(Match.new) do |f| %>
+            <%= f.input :asker_id, input_html: { value: current_user.id }, as: :hidden %>
+            <%= f.input :receiver_id, input_html: { value: key.id }, as: :hidden %>
+            <%= f.submit "connect" %>
+          <% end %>
         </div>
     </div>
 

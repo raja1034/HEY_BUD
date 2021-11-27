@@ -89,3 +89,5 @@ user_interest = UserInterest.create!(user_id: bernadette.id, interest_id: music.
 user_interest = UserInterest.create!(user_id: bernadette.id, interest_id: cooking.id, description: 'I love to oil paint');
 
 puts "User interests --done"
+
+# match_new = Match.create!(asker_id: raja.id, receiver_id: leo.id)
