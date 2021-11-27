@@ -1,4 +1,4 @@
-<div class="container-signup">
+<div class="container-signup main-container">
   <div class="container container-top">
     <%= form_with url: welcome_path, local: true  do |form| %>
       <div class="container container-card-trip" id="avatar_pick">
@@ -6,14 +6,10 @@
           <h2 class="text-uppercase">Welcome to Hey Bud, <%= current_user.first_name %> </h2>
           <h5>Your new HeyBud identity is called <%= current_user.username %> </h5>
           <div class="sign-up-div">
-            <h4 class="text-uppercase"> Pick your avatar </h4>
+            <h4 class="text-uppercase"> Here's your avatar </h4>
             <div class="d-flex justify-content-center">
-              <% Avatar.all.each do |avatar| %>
-                <div class="avatar-selector">
-                  <%= image_tag avatar.image_url, style: "width: 100px; height: 100px; border-radius: 50%; margin-right: 12px;" %>
-                  <%= form.radio_button "avatar_id", avatar.id, class: 'd-none' %>
-                </div>
-              <% end %>
+
+                  <%= image_tag current_user.avatar_url , style: "width: 150px; height: 150px; border-radius: 25px;" %>
             </div>
           </div>
           <span class="heyBudButton" id="interest_button"> Pick your interests </span>
