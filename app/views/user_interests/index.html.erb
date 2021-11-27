@@ -22,7 +22,7 @@
               <div class="modal-body">
 
                 <% Interest.all.each do |interest| %>
-                  <div class="form-check">
+                  <div class="form-check d-flex justify-content-center">
 
                     <%= form.check_box "interest_ids[]", {checked: current_user.interests.include?(interest), class:"form-check-input"}, interest.id, nil %>
                     <label class="form-check-label" for="flexCheckChecked">
