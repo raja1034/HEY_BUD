@@ -15,34 +15,36 @@ puts "interests  have been destroyed"
 Avatar.destroy_all
 puts "Avatars  have been destroyed"
 
-avatar_urls = [
-  "https://media.istockphoto.com/photos/fine-art-abstract-floral-painting-background-picture-id1258336471?b=1&k=20&m=1258336471&s=170667a&w=0&h=9axQbqJmQz3qAGDJEqGWiDLnJ3Thvj55NrhqWcifaFg=",
-  "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YXJ0fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
-  "https://images.unsplash.com/photo-1569172122301-bc5008bc09c5?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8YXJ0fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
-  "https://images.unsplash.com/photo-1543857778-c4a1a3e0b2eb?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGFydHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
-]
+# avatar_urls = [
+#   "https://media.istockphoto.com/photos/fine-art-abstract-floral-painting-background-picture-id1258336471?b=1&k=20&m=1258336471&s=170667a&w=0&h=9axQbqJmQz3qAGDJEqGWiDLnJ3Thvj55NrhqWcifaFg=",
+#   "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YXJ0fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+#   "https://images.unsplash.com/photo-1569172122301-bc5008bc09c5?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8YXJ0fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+#   "https://images.unsplash.com/photo-1543857778-c4a1a3e0b2eb?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGFydHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+# ]
 
-avatar_urls.each do |avatar_url|
-  Avatar.create(image_url: avatar_url)
-end
+# avatar_urls.each do |avatar_url|
+#   Avatar.create(image_url: avatar_url)
+# end
+
+
 
 puts "avatars have been created"
 
-raja = User.create!(first_name: 'Raja', last_name: 'Nair', city: 'Berlin', age: 27, username: 'Hair Destroyer', avatar: Avatar.all.sample ,email:'rn@lewagon.com', password: '123456');
-philipp = User.create!(first_name: 'Philipp', last_name: 'Berendes', city: 'Berlin', age: 50, username: 'SQL Ruler', avatar: Avatar.all.sample, email:'pb@lewagon.com', password: '123456');
-victor = User.create!(first_name: 'Victor', last_name: 'Neumann', city: 'Berlin', age: 25, username: 'Busy Thing', avatar: Avatar.all.sample,email:'vn@lewagon.com', password: '123456');
+raja = User.create!(first_name: 'Raja', last_name: 'Nair', city: 'Berlin', age: 27, username: 'Hair Destroyer', avatar_url:  "https://github.com/identicons/raja.png",email:'rn@lewagon.com', password: '123456');
+philipp = User.create!(first_name: 'Philipp', last_name: 'Berendes', city: 'Berlin', age: 50, username: 'SQL Ruler', avatar_url: "https://github.com/identicons/philip.png", email:'pb@lewagon.com', password: '123456');
+victor = User.create!(first_name: 'Victor', last_name: 'Neumann', city: 'Berlin', age: 25, username: 'Busy Thing', avatar_url: "https://github.com/identicons/victor.png",email:'vn@lewagon.com', password: '123456');
 
-natalie = User.create!(first_name: 'Natalie', last_name: 'Bechtold', city: 'Berlin', age: 27, username: 'The Baker', avatar: Avatar.all.sample ,email:'nb@lewagon.com', password: '123456');
-linda = User.create!(first_name: 'Linda', last_name: 'Dao', city: 'Berlin', age: 50, username: 'The Coding Ninja', avatar: Avatar.all.sample, email:'ld@lewagon.com', password: '123456');
-bernadette = User.create!(first_name: 'Bernadette', last_name: 'Diemer', city: 'Berlin', age: 25, username: 'Green Dresser', avatar: Avatar.all.sample,email:'bd@lewagon.com', password: '123456');
+natalie = User.create!(first_name: 'Natalie', last_name: 'Bechtold', city: 'Berlin', age: 27, username: 'The Baker', avatar_url:  "https://github.com/identicons/nathalie.png",email:'nb@lewagon.com', password: '123456');
+linda = User.create!(first_name: 'Linda', last_name: 'Dao', city: 'Berlin', age: 50, username: 'The Coding Ninja', avatar_url: "https://github.com/identicons/linda.png", email:'ld@lewagon.com', password: '123456');
+bernadette = User.create!(first_name: 'Bernadette', last_name: 'Diemer', city: 'Berlin', age: 25, username: 'Green Dresser', avatar_url: "https://github.com/identicons/bernie.png",email:'bd@lewagon.com', password: '123456');
 
-nathalie = User.create!(first_name: 'Nathalie', last_name: 'Faber', city: 'Berlin', age: 27, username: 'Party Starter', avatar: Avatar.all.sample ,email:'nf@lewagon.com', password: '123456');
-virna = User.create!(first_name: 'Virna', last_name: 'Harri', city: 'Berlin', age: 50, username: 'Joke Maker', avatar: Avatar.all.sample, email:'vh@lewagon.com', password: '123456');
-dennis = User.create!(first_name: 'Dennis', last_name: 'Jurczyk', city: 'Berlin', age: 25, username: 'Horse Rider', avatar: Avatar.all.sample,email:'dj@lewagon.com', password: '123456');
+nathalie = User.create!(first_name: 'Nathalie', last_name: 'Faber', city: 'Berlin', age: 27, username: 'Party Starter', avatar_url:  "https://github.com/identicons/nathalie.png",email:'nf@lewagon.com', password: '123456');
+virna = User.create!(first_name: 'Virna', last_name: 'Harri', city: 'Berlin', age: 50, username: 'Joke Maker', avatar_url: "https://github.com/identicons/virna.png", email:'vh@lewagon.com', password: '123456');
+dennis = User.create!(first_name: 'Dennis', last_name: 'Jurczyk', city: 'Berlin', age: 25, username: 'Horse Rider', avatar_url: "https://github.com/identicons/dennis.png",email:'dj@lewagon.com', password: '123456');
 
-martin = User.create!(first_name: 'Martin', last_name: 'Krause', city: 'Berlin', age: 27, username: 'The Traveler', avatar: Avatar.all.sample ,email:'mk@lewagon.com', password: '123456');
-toni = User.create!(first_name: 'Toni', last_name: 'Panacek', city: 'Berlin', age: 50, username: 'The Boss', avatar: Avatar.all.sample, email:'tp@lewagon.com', password: '123456');
-leo = User.create!(first_name: 'Leo', last_name: 'Körber', city: 'Berlin', age: 25, username: 'Helping Hand', avatar: Avatar.all.sample, email:'lk@lewagon.com', password: '123456');
+martin = User.create!(first_name: 'Martin', last_name: 'Krause', city: 'Berlin', age: 27, username: 'The Traveler', avatar_url:  "https://github.com/identicons/martin.png",email:'mk@lewagon.com', password: '123456');
+toni = User.create!(first_name: 'Toni', last_name: 'Panacek', city: 'Berlin', age: 50, username: 'The Boss', avatar_url: "https://github.com/identicons/toni.png", email:'tp@lewagon.com', password: '123456');
+leo = User.create!(first_name: 'Leo', last_name: 'Körber', city: 'Berlin', age: 25, username: 'Helping Hand', avatar_url: "https://github.com/identicons/leo.png", email:'lk@lewagon.com', password: '123456');
 
 puts "All User are created "
 

@@ -8,7 +8,7 @@
   <div class="card">
     <div class="additional">
       <div class="user-card">
-        <img src="https://github.com/identicons/Victor.png" class="avatar-card">
+        <%= image_tag key.avatar_url , class:"avatar-card" %>
 
         <div class="points center-connect">
           <%= simple_form_for(Match.new) do |f| %>
@@ -42,16 +42,11 @@
           <div>
             <div class="title"><%= key.interests.third.name %></div>
           </div>
-          <div>
-            <div class="title">Coffee</div>
-            <i class="fa fa-coffee"></i>
-            <div class="value infinity">∞</div>
-          </div>
         </div>
       </div>
     </div>
     <div class="general">
-      <h2>HOVER OVER THE CARD TO DISCOVER YOUR MATCH</h2>
+      <h2>DISCOVER YOUR MATCH</h2>
     </div>
   </div>
   <% end %>
