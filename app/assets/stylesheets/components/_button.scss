@@ -37,11 +37,6 @@
   padding: 10px 20px;
 }
 
-.heyBudButton.chatbutton {
-  background-color: #A12568;
-  color: #FEC260;
-  border-radius: 0px 25px 25px 0px;
-}
 
 .heyBudButton:hover {
   background-color:#A12568;
@@ -49,6 +44,30 @@
   cursor: pointer;
 }
 
+.heyBudButton-reverse {
+  background-color: #A12568;
+  font-family: "Anton";
+  color: #FEC260;
+	font-size:20px;
+	font-weight: 400;
+  border-radius: 60px;
+  border: none;
+  text-align: center;
+  padding: 10px 20px;
+}
+
+.heyBudButton-reverse:hover {
+  background-color:#A12568;
+  color: #f6f6f6;
+  cursor: pointer;
+}
+
+
+.heyBudButton.chatbutton {
+  background-color: #A12568;
+  color: #FEC260;
+  border-radius: 0px 25px 25px 0px;
+}
 .heyBudButton-chat-discover {
   background-color: #A12568;
   font-family: "Anton";
