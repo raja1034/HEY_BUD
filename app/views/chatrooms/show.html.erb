@@ -10,7 +10,7 @@
             <div class="card-chatpartner mb-2">
               <img src="https://github.com/identicons/Victor.png" class="avatar-card-chat">
               <div class="card-body">
-                <h3 class="chatpartner"> <%= chatroom.match.receiver.first_name %> </h3>
+                <h5 class="chatpartner"> <%= chatroom.match.receiver.first_name %> </h5>
                 <p class="last-message">
                   <% lastMessage = chatroom.messages.last %>
                   <%= lastMessage.content  %>
