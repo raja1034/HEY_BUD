@@ -11,14 +11,16 @@
               <img src="https://github.com/identicons/Victor.png" class="avatar-card-chat">
               <div class="card-body">
                 <h5 class="chatpartner"> <%= chatroom.match.receiver.first_name %> </h5>
-                <p class="last-message">
-                  <% lastMessage = chatroom.messages.last %>
-                  <%= lastMessage.content  %>
-                </p>
-                <p class="last-message-date">
-                  <%= lastMessage.user.username %> on the
-                  <%= lastMessage.created_at.strftime("%d %b at %H:%M") %>
-                </p>
+                <% if chatroom.messages.any? %>
+                  <p class="last-message">
+                    <% lastMessage = chatroom.messages.last %>
+                    <%= lastMessage.content  %>
+                  </p>
+                  <p class="last-message-date">
+                    <%= lastMessage.user.username %> on the
+                    <%= lastMessage.created_at.strftime("%d %b at %H:%M") %>
+                  </p>
+                <% end %>
               </div>
             </div>
           <% end %>
