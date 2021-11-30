@@ -1,65 +1,69 @@
-<div class="container">
+<div class="container-signin">
+  <div class="container">
 
-  <h4>Hey <%= current_user.username %> </h4>
-  <p>On this page you can regenrate your username, pick a new avatar & edit your real information </p>
+    <h2>Hey <%= current_user.username %> </h2>
+    <p>On this page you can edit your details </p>
 
-  <h5>This is your current username</h5>
-  <p>Your current HeyBud identity is called <%= current_user.username %> </p>
-  <button class="heyBudButton"> Generate a new one </button>
+    <h5> This is your current username </h5>
+    <p>Your current HeyBud identity is called <strong> <%= current_user.username %> </strong> </p>
 
-  <h5>This is your current avatar</h5>
-  <%= image_tag current_user.avatar.image_url, style: "width: 100px; height: 100px; border-radius: 50%; margin-right: 12px;" %>
-  <button class="heyBudButton" style="margin-top: 3rem;"> Pick a new one </button>
+    <%# <button class="heyBudButton-reverse"> Generate a new one </button>
 
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+    <h5>This is your current avatar</h5>
+    <%# <%= image_tag current_user.avatar.image_url, style: "width: 100px; height: 100px; border-radius: 50%; margin-right: 12px;"
+    <button class="heyBudButton" style="margin-top: 3rem;"> Pick a new one </button> %>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= f.error_notification %>
+  <h4>Edit your details <%= current_user.first_name %> </h4>
 
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-    <% end %>
-    <%= f.input :first_name,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "First Name" }%>
-    <%= f.input :last_name,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "Last name" }%>
-    <%= f.input :city,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "City" }%>
-    <%= f.input :age,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "Age" }%>
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-inputs">
+      <%= f.input :email, required: true, autofocus: true,
+                  input_html: { class: "signinform-input" }%>
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+      <% end %>
+      <%= f.input :first_name,
+                  required: true,
+                  autofocus: true,
+                  input_html: { class: "signinform-input", autocomplete: "First Name" }%>
+      <%= f.input :last_name,
+                  required: true,
+                  autofocus: true,
+                  input_html: { class: "signinform-input", autocomplete: "Last name" }%>
+      <%= f.input :city,
+                  required: true,
+                  autofocus: true,
+                  input_html: { class: "signinform-input", autocomplete: "City" }%>
+      <%= f.input :age,
+                  required: true,
+                  autofocus: true,
+                  input_html: { class: "signinform-input", autocomplete: "Age" }%>
+      <%= f.input :email,
+                  required: true,
+                  autofocus: true,
+                  input_html: { class: "signinform-input", autocomplete: "email" }%>
+      <%= f.input :password,
+                  required: true,
+                  hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                  input_html: { class: "signinform-input", autocomplete: "new-password" } %>
+      <%= f.input :password_confirmation,
+                  required: true,
+                  input_html: { class: "signinform-input", autocomplete: "new-password" } %>
+    </div>
+
+    <div class="heyBudButton-reverse">
+      <%= f.button :submit, "Update" %>
+    </div>
+  <% end %>
+
+
+  <h3>Cancel my account</h3>
+
+  <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+
+  <%= link_to "Back", :back %>
+
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Update" %>
-  </div>
-<% end %>
-
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
-
 </div>

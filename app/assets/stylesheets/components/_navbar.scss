@@ -28,6 +28,33 @@
   color: #FEC260;
 }
 
+.navbar-light .navbar-nav .nav-link:hover {
+  color: #ffffff;
+}
+
+.navbar-nav .dropdown-menu {
+    position: static;
+    float: none;
+    border-radius: 20px;
+}
+
+.dropdown-item {
+  border-radius: 20px;
+}
+
+.dropdown-item:hover {
+  border-radius: 20px;
+  color: #A12568;
+}
+
+.dropdown-toggle:empty::after {
+  color: white;
+}
+
+.dropdown-toggle::after {
+  color: white;
+}
+
 .nav-item{
   font-family: "Anton";
   letter-spacing: 1px;
