@@ -6,6 +6,7 @@
       <%# <p> Hello <%= current_user.first_name </p>
       <hr> %>
         <% @chatrooms.each do |chatroom| %>
+        <% if chatroom.match.asker == current_user || chatroom.match.receiver == current_user %>
           <%= link_to chatroom do %>
             <div class="card-chatpartner mb-2">
               <img src="https://github.com/identicons/Victor.png" class="avatar-card-chat">
@@ -27,6 +28,7 @@
                 <% end %>
               </div>
             </div>
+          <% end %>
           <% end %>
         <% end %>
         <button class="heyBudButton-chat-discover"> Discover more matches! </button>

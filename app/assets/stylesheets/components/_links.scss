@@ -18,6 +18,15 @@
 //   color: blue;
 // }
 
-.a {
+a {
     text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+  color: inherit;
+}
+
+.gap-class {
+  gap: 25px;
 }
