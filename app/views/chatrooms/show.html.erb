@@ -10,7 +10,7 @@
             <div class="card-chatpartner mb-2">
               <img src="https://github.com/identicons/Victor.png" class="avatar-card-chat">
               <div class="card-body">
-                <h5 class="chatpartner"> <%= chatroom.match.receiver.first_name %> </h5>
+                <h5 class="chatpartner"> <%= chatroom.match.receiver.username %> </h5>
                 <% if chatroom.messages.any? %>
                   <p class="last-message">
                     <% lastMessage = chatroom.messages.last %>
@@ -33,7 +33,7 @@
 
       <div class="chat-column">
 
-        <h3 class="m-3"><%= @chatroom.match.receiver.first_name %></h3>
+        <h3 class="m-3"><%= @chatroom.match.receiver.username %></h3>
 
           <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
             <% @chatroom.messages.each do |message| %>
