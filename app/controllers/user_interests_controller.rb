@@ -8,7 +8,7 @@ class UserInterestsController < ApplicationController
   def create
     selected_interests = Interest.where(id: params["interest_ids"])
     current_user.interests = selected_interests
-    redirect_to user_interests_path(@user_interest)
+    redirect_to matches_path
   end
 
   def edit

@@ -1,6 +1,6 @@
 <div class="container-signup main-container">
   <div class="container container-top">
-    <%= form_with url: welcome_path, local: true  do |form| %>
+    <%= form_with url: user_interests_path, local: true  do |form| %>
       <div class="container container-card-trip" id="avatar_pick">
         <div class="card-trip justify-content-center" >
           <h2 class="text-uppercase">Welcome to Hey Bud, <%= current_user.first_name %> </h2>
@@ -29,7 +29,7 @@
                 </label></div>
             <% end %>
           </div>
-          <button type="submit" class="heyBudButton">  <%= link_to "Show Me My Matches", matches_path %> </button>
+          <button type="submit" class="heyBudButton"> Show Me My Matches </button>
         </div>
       </div>
     <% end %>
