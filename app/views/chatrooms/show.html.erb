@@ -9,7 +9,11 @@
         <% if chatroom.match.asker == current_user || chatroom.match.receiver == current_user %>
           <%= link_to chatroom do %>
             <div class="card-chatpartner mb-2">
-              <img src="https://github.com/identicons/Victor.png" class="avatar-card-chat">
+              <% if chatroom.match.receiver == current_user %>
+               <%= image_tag chatroom.match.asker.avatar_url , class:"avatar-card" %>
+              <% else %>
+              <%= image_tag chatroom.match.receiver.avatar_url , class:"avatar-card" %>
+              <% end %>
               <div class="card-body">
               <% if chatroom.match.receiver == current_user %>
                 <h5 class="chatpartner"> <%= chatroom.match.asker.username %> </h5>
