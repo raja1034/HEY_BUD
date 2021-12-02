@@ -31,20 +31,16 @@
           <span><%= key.city.upcase %></span>
         </div>
         <div class="stats">
+        <% key.interests.first(3).each do |interest| %>
           <div>
-            <div class="title"><%= key.interests.first.name %></div>
+            <div class="title"><%= interest.name %></div>
           </div>
-          <div>
-            <div class="title"><%= key.interests.second.name %></div>
-          </div>
-          <div>
-            <div class="title"><%= key.interests.third.name %></div>
-          </div>
+        <% end  %>
         </div>
       </div>
     </div>
     <div class="general">
-      <h2>DISCOVER YOUR Bla MATCH</h2>
+      <h2>DISCOVER YOUR MATCH</h2>
     </div>
   </div>
   <% end %>
