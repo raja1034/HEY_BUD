@@ -40,8 +40,11 @@
 }
 
 .card-body:hover {
-  background-color: #A12568;
   color: white !important;
+}
+
+.card-chatpartner:hover {
+  background-color: #A12568;
 }
 
 .card-chatpartner:nth-child(2) {
@@ -50,10 +53,12 @@
 
 .chatpartner-column {
   margin: 1.5rem 0;
+  overflow: scroll;
+  max-height: 72vh;
 }
 
 #messages {
-    height: 60vh;
+    height: 58vh;
     overflow: scroll;
     border-radius: 20px;
 }
@@ -113,7 +118,7 @@
     margin-left: 1.5rem;
     border-radius: 60px;
     padding: 10px 20px;
-    max-height: 76vh;
+    // max-height: 76vh;
 }
 
 

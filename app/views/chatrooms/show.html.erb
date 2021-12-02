@@ -6,11 +6,16 @@
       <%# <p> Hello <%= current_user.first_name </p>
       <hr> %>
         <% @chatrooms.each do |chatroom| %>
+        <% if chatroom.match.asker == current_user || chatroom.match.receiver == current_user %>
           <%= link_to chatroom do %>
             <div class="card-chatpartner mb-2">
               <img src="https://github.com/identicons/Victor.png" class="avatar-card-chat">
               <div class="card-body">
+              <% if chatroom.match.receiver == current_user %>
+                <h5 class="chatpartner"> <%= chatroom.match.asker.username %> </h5>
+              <% else %>
                 <h5 class="chatpartner"> <%= chatroom.match.receiver.username %> </h5>
+              <% end %>
                 <% if chatroom.messages.any? %>
                   <p class="last-message">
                     <% lastMessage = chatroom.messages.last %>
@@ -24,6 +29,7 @@
               </div>
             </div>
           <% end %>
+          <% end %>
         <% end %>
         <button class="heyBudButton-chat-discover"> Discover more matches! </button>
     </div>
@@ -33,7 +39,8 @@
 
       <div class="chat-column">
 
-        <h3 class="m-3"><%= @chatroom.match.receiver.username %></h3>
+
+        <h3 class="m-3"><%= @chatroom.match.receiver == current_user ? @chatroom.match.asker.username : @chatroom.match.receiver.username %></h3>
 
           <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
             <% @chatroom.messages.each do |message| %>
@@ -54,7 +61,7 @@
 
               <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
               <div class="chat-box d-flex">
-                <%= f.input_field :content, label: false, placeholder: "Message to #{@chatroom.match.receiver.first_name } ...", as: :string %>
+                <%= f.input_field :content, label: false, placeholder: "Message to #{@chatroom.match.receiver.username } ...", as: :string %>
                <%= f.button :submit, "SEND", class: "heyBudButton chatbutton" %>
               </div>
               <% end %>

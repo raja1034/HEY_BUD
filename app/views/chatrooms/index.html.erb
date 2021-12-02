@@ -8,11 +8,16 @@
       <%# <p> Hello <%= current_user.first_name </p>
       <hr> %>
         <% @chatrooms.each do |chatroom| %>
+        <% if chatroom.match.asker == current_user || chatroom.match.receiver == current_user %>
           <%= link_to chatroom do %>
             <div class="card-chatpartner mb-2">
               <img src="https://github.com/identicons/Victor.png" class="avatar-card-chat">
               <div class="card-body">
-                <h3 class="chatpartner"> <%= chatroom.match.receiver.username %></h3>
+                <% if chatroom.match.receiver == current_user %>
+                <h3 class="chatpartner"> <%= chatroom.match.asker.username %> </h3>
+              <% else %>
+                <h3 class="chatpartner"> <%= chatroom.match.receiver.username %> </h3>
+              <% end %>
                 <% if chatroom.messages.any? %>
                   <p class="last-message">
                     <% lastMessage = chatroom.messages.last %>
@@ -25,6 +30,7 @@
                 <% end %>
               </div>
             </div>
+          <% end %>
           <% end %>
         <% end %>
     </div>
