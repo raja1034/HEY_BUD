@@ -10,13 +10,13 @@
       <div class="user-card">
         <%= image_tag key.avatar_url , class:"avatar-card" %>
 
-        <div class="points center-connect">
+        <%# <div class="points center-connect"> %>
           <%= simple_form_for(Match.new) do |f| %>
             <%= f.input :asker_id, input_html: { value: current_user.id }, as: :hidden %>
             <%= f.input :receiver_id, input_html: { value: key.id }, as: :hidden %>
-            <%= f.submit "connect" %>
+            <%= f.submit "connect", class: "points center-connect", style: "border: none;" %>
           <% end %>
-        </div>
+        <%# </div> %>
     </div>
 
       <div class="more-info">
@@ -44,7 +44,7 @@
       </div>
     </div>
     <div class="general">
-      <h2>DISCOVER YOUR MATCH</h2>
+      <h2>DISCOVER YOUR Bla MATCH</h2>
     </div>
   </div>
   <% end %>
