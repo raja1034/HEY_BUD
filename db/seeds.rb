@@ -84,9 +84,13 @@ user_interest = UserInterest.create!(user_id: martin.id, interest_id: sports.id,
 user_interest = UserInterest.create!(user_id: martin.id, interest_id: music.id, description: ' Anything with Guitar is my jam!');
 user_interest = UserInterest.create!(user_id: martin.id, interest_id: politics.id, description: 'Cannot wait to travel again');
 
-user_interest = UserInterest.create!(user_id: bernadette.id, interest_id: sports.id, description: 'Cooking Vegan Bread!');
-user_interest = UserInterest.create!(user_id: bernadette.id, interest_id: music.id, description: ' Anything with Violin is my jam!');
-user_interest = UserInterest.create!(user_id: bernadette.id, interest_id: cooking.id, description: 'I love to oil paint');
+user_interest = UserInterest.create!(user_id: victor.id, interest_id: sports.id, description: 'Cooking Vegan Bread!');
+user_interest = UserInterest.create!(user_id: victor.id, interest_id: music.id, description: ' Anything with Violin is my jam!');
+user_interest = UserInterest.create!(user_id: victor.id, interest_id: cooking.id, description: 'I love to oil paint');
+
+user_interest = UserInterest.create!(user_id: philipp.id, interest_id: sports.id, description: 'Cooking Vegan Bread!');
+user_interest = UserInterest.create!(user_id: philipp.id, interest_id: music.id, description: ' Anything with Violin is my jam!');
+user_interest = UserInterest.create!(user_id: philipp.id, interest_id: cooking.id, description: 'I love to oil paint');
 
 puts "User interests --done"
 
