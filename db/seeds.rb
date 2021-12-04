@@ -64,11 +64,11 @@ politics = Interest.create!(name: '🎙 Politics');
 
 puts "interests created"
 
-user_interest = UserInterest.create!(user_id: raja.id, interest_id: sports.id, description: 'Love talking about cricket and football. Enjoy playing basketball');
+user_interest = UserInterest.create!(user_id: raja.id, interest_id: traveling.id, description: 'Love talking about cricket and football. Enjoy playing basketball');
 user_interest = UserInterest.create!(user_id: raja.id, interest_id: music.id, description: 'Life without electro is very sad');
 user_interest = UserInterest.create!(user_id: raja.id, interest_id: cooking.id, description: 'Indian Food for the win!');
 
-user_interest = UserInterest.create!(user_id: leo.id, interest_id: sports.id, description: 'Look basketball and Yoga!');
+user_interest = UserInterest.create!(user_id: leo.id, interest_id: dancing.id, description: 'Look basketball and Yoga!');
 user_interest = UserInterest.create!(user_id: leo.id, interest_id: music.id, description: ' Anything with Guitar is my jam!');
 user_interest = UserInterest.create!(user_id: leo.id, interest_id: traveling.id, description: 'Cannot wait to travel again');
 
@@ -80,7 +80,7 @@ user_interest = UserInterest.create!(user_id: dennis.id, interest_id: eating_out
 user_interest = UserInterest.create!(user_id: dennis.id, interest_id: reading.id, description: ' Anything with Guitar is my jam!');
 user_interest = UserInterest.create!(user_id: dennis.id, interest_id: board_games.id, description: 'Cannot wait to travel again');
 
-user_interest = UserInterest.create!(user_id: martin.id, interest_id: sports.id, description: 'Look basketball and Yoga!');
+user_interest = UserInterest.create!(user_id: martin.id, interest_id: painting.id, description: 'Look basketball and Yoga!');
 user_interest = UserInterest.create!(user_id: martin.id, interest_id: music.id, description: ' Anything with Guitar is my jam!');
 user_interest = UserInterest.create!(user_id: martin.id, interest_id: politics.id, description: 'Cannot wait to travel again');
 
